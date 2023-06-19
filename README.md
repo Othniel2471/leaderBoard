@@ -24,7 +24,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 [Todo List] <a name="Portfolio-site"></a>
+# 📖 [Leader Board] <a name="Leader-board"></a>
 
 **[Leader Board]** This is a simple webapp, that takes the name and score of individuals for a leaderboard and posts it to an api then also retrives it from the api.
 
