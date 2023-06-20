@@ -41,9 +41,8 @@ var postData = /*#__PURE__*/function () {
           return response.json();
         case 5:
           data = _context.sent;
-          console.log(data);
           return _context.abrupt("return", data);
-        case 8:
+        case 7:
         case "end":
           return _context.stop();
       }
@@ -928,4 +927,4 @@ display.refreshBtn.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle47676feaed07a60071a3.js.map
+//# sourceMappingURL=bundlec12720ba764d1b008613.js.map
