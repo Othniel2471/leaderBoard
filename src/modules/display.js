@@ -1,3 +1,5 @@
+import { postData, getData } from './api.js';
+
 // class to display the scores
 class Display {
   constructor() {
@@ -35,18 +37,25 @@ class Display {
     }
   }
 
+  // post data to the API
+  async postForm() {
+    await postData(this.nameInput.value, this.scoreInput.value);
+  }
+
   // display leaderboard
   displayLeaderboard(leaderboard) {
     const displayBoard = leaderboard.map((item) => `<div class="scores">
-                    <div class="name">${item.name}:</div>
-                    <div class="score">${item.score}</div>
-                    </div>`).join('');
+                <div class="name">${item.user}:</div>
+                <div class="score">${item.score}</div>
+                </div>`).join('');
     this.boardContainer.innerHTML = displayBoard;
   }
 
   // display leaderboard on load
-  displayOnLoad() {
-    this.displayLeaderboard(this.nameArray);
+  async displayOnLoad() {
+    const data = await getData();
+    const leaderboard = data.result;
+    this.displayLeaderboard(leaderboard);
   }
 }
 
