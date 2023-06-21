@@ -231,7 +231,59 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,400&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `*,
+___CSS_LOADER_EXPORT___.push([module.id, `::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+===============
+Variables
+===============
+*/
+:root {
+  /* dark shades of primary color */
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+*,
 ::after,
 ::before {
   margin: 0;
@@ -241,7 +293,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `*,
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  display: grid;
+  place-items: center;
 }
 
 h2 {
@@ -254,6 +310,8 @@ header {
   padding: 1rem;
   font-size: 1.5rem;
   text-align: center;
+  display: grid;
+  place-items: center;
 }
 
 .alert-container {
@@ -272,7 +330,7 @@ header {
   border-radius: 0.25rem;
   letter-spacing: 0.25rem;
   text-transform: capitalize;
-  width: 30rem;
+  width: 90vw;
 }
 
 .alert-danger {
@@ -289,14 +347,20 @@ header {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 5rem;
   gap: 20px;
+  margin: 0 auto;
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  padding: 2rem;
+  width: 90vw;
 }
 
 .display-list {
   display: grid;
   gap: 20px;
-  width: 100%;
+  width: 80%;
 }
 
 .recent {
@@ -311,26 +375,35 @@ header {
 }
 
 .btn {
-  background-color: #fff;
-  text-transform: capitalize;
-  padding: 5px;
-  border: 2px solid #000;
-  border-right: 4px solid #000;
-  border-bottom: 4px solid #000;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-black);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
 }
 
 .btn:hover {
-  cursor: pointer;
-  color: #fff;
-  background: #333;
+  color: var(--clr-white);
+  background: var(--clr-black);
 }
 
 .board {
   border: 2px solid black;
-  max-height: 500px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  max-height: 200px;
   overflow-y: scroll;
-  padding: 2px;
   width: 100%;
+  display: grid;
+  gap: 5px;
 }
 
 .scores {
@@ -360,13 +433,19 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  color: var(--clr-primary-1);
+  text-align: center;
 }
 
 input {
-  width: 15rem;
-  border: 2px solid #000;
-  border-left: 4px solid #000;
-  padding: 0.4rem;
+  padding: 0.25rem;
+  padding-left: 1rem;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  border-color: transparent;
+  font-size: 1rem;
+  flex: 1 0 auto;
+  color: var(--clr-grey-5);
 }
 
 .btn-container {
@@ -380,8 +459,9 @@ input {
   }
   .content-container {
     flex-direction: row;
+    height: 24rem;
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAEA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,uBAAA;AAAF;;AAGA;EACE,kCAAA;AAAF;;AAGA;EACE,0BAAA;EACA,eAAA;AAAF;;AAGA;EACE,0BAAA;EACA,aAAA;EACA,iBAAA;EACA,kBAAA;AAAF;;AAGA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;AAAF;;AAGA;EACE,mBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,iBAAA;EACA,sBAAA;EACA,uBAAA;EACA,0BAAA;EACA,YAAA;AAAF;;AAGA;EACE,cAAA;EACA,mBAAA;AAAF;;AAGA;EACE,cAAA;EACA,mBAAA;AAAF;;AAGA;EACE,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;EACA,SAAA;AAAF;;AAGA;EACE,aAAA;EACA,SAAA;EACA,WAAA;AAAF;;AAGA;EACE,aAAA;EACA,8BAAA;EACA,SAAA;AAAF;;AAGA;EACE,YAAA;EACA,0BAAA;AAAF;;AAGA;EACE,sBAAA;EACA,0BAAA;EACA,YAAA;EACA,sBAAA;EACA,4BAAA;EACA,6BAAA;AAAF;;AAGA;EACE,eAAA;EACA,WAAA;EACA,gBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,iBAAA;EACA,kBAAA;EACA,YAAA;EACA,WAAA;AAAF;;AAGA;EACE,aAAA;EACA,QAAA;EACA,0BAAA;EACA,cAAA;AAAF;;AAGA;EACE,sBAAA;AAAF;;AAGA;EACE,sBAAA;AAAF;;AAGA;EACE,gBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;AAAF;;AAGA;EACE,aAAA;EACA,sBAAA;EACA,SAAA;AAAF;;AAGA;EACE,YAAA;EACA,sBAAA;EACA,2BAAA;EACA,eAAA;AAAF;;AAGA;EACE,iBAAA;AAAF;;AAGA;EACE;IACE,eAAA;IACA,gBAAA;EAAF;EAGA;IACE,mBAAA;EADF;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,400&display=swap');\r\n\r\n*,\r\n::after,\r\n::before {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  scroll-behavior: smooth;\r\n}\r\n\r\nbody {\r\n  font-family: 'Poppins', sans-serif;\r\n}\r\n\r\nh2 {\r\n  text-transform: capitalize;\r\n  font-size: 2rem;\r\n}\r\n\r\nheader {\r\n  text-transform: capitalize;\r\n  padding: 1rem;\r\n  font-size: 1.5rem;\r\n  text-align: center;\r\n}\r\n\r\n.alert-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.alert {\r\n  margin-bottom: 1rem;\r\n  height: 1.25rem;\r\n  display: grid;\r\n  align-items: center;\r\n  text-align: center;\r\n  font-size: 0.7rem;\r\n  border-radius: 0.25rem;\r\n  letter-spacing: 0.25rem;\r\n  text-transform: capitalize;\r\n  width: 30rem;\r\n}\r\n\r\n.alert-danger {\r\n  color: #721c24;\r\n  background: #f8d7da;\r\n}\r\n\r\n.alert-success {\r\n  color: #155724;\r\n  background: #d4edda;\r\n}\r\n\r\n.content-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  flex-direction: column;\r\n  padding: 5rem;\r\n  gap: 20px;\r\n}\r\n\r\n.display-list {\r\n  display: grid;\r\n  gap: 20px;\r\n  width: 100%;\r\n}\r\n\r\n.recent {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  gap: 20px;\r\n}\r\n\r\n.refresh {\r\n  height: 30px;\r\n  transform: translateY(8px);\r\n}\r\n\r\n.btn {\r\n  background-color: #fff;\r\n  text-transform: capitalize;\r\n  padding: 5px;\r\n  border: 2px solid #000;\r\n  border-right: 4px solid #000;\r\n  border-bottom: 4px solid #000;\r\n}\r\n\r\n.btn:hover {\r\n  cursor: pointer;\r\n  color: #fff;\r\n  background: #333;\r\n}\r\n\r\n.board {\r\n  border: 2px solid black;\r\n  max-height: 500px;\r\n  overflow-y: scroll;\r\n  padding: 2px;\r\n  width: 100%;\r\n}\r\n\r\n.scores {\r\n  display: flex;\r\n  gap: 5px;\r\n  text-transform: capitalize;\r\n  padding: 5px 0;\r\n}\r\n\r\n.scores:nth-child(even) {\r\n  background-color: #ddd;\r\n}\r\n\r\n.scores:nth-child(odd) {\r\n  background-color: #fff;\r\n}\r\n\r\n.form-container {\r\n  margin-top: 2rem;\r\n  display: grid;\r\n  place-items: center;\r\n  gap: 10px;\r\n  width: 100%;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\ninput {\r\n  width: 15rem;\r\n  border: 2px solid #000;\r\n  border-left: 4px solid #000;\r\n  padding: 0.4rem;\r\n}\r\n\r\n.btn-container {\r\n  text-align: right;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  header {\r\n    font-size: 2rem;\r\n    text-align: left;\r\n  }\r\n\r\n  .content-container {\r\n    flex-direction: row;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"AAEA;EACE,aAAA;AAAF;;AAGA;;;;CAAA;AAMA;EACE,iCAAA;EACA,mCAAA;EACA,mCAAA;EACA,mCAAA;EACA,mCAAA;EAEA,uBAAA;EACA,wBAAA;EAEA,oCAAA;EACA,mCAAA;EACA,mCAAA;EACA,mCAAA;EACA,mCAAA;EACA,qCAAA;EAEA,qCAAA;EACA,gCAAA;EACA,gCAAA;EACA,gCAAA;EACA,gCAAA;EAEA,6BAAA;EACA,gCAAA;EACA,gCAAA;EACA,gCAAA;EACA,gCAAA;EACA,gCAAA;EACA,iCAAA;EACA,iBAAA;EACA,kCAAA;EACA,mCAAA;EACA,oCAAA;EACA,qCAAA;EACA,iBAAA;EACA,kCAAA;EACA,uCAAA;EACA,6BAAA;EACA,kBAAA;EACA,gBAAA;EACA,6CAAA;EACA,4CAAA;EACA,mBAAA;EACA,oBAAA;AALF;;AAQA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,uBAAA;AALF;;AAQA;EACE,gCAAA;EACA,8BAAA;EACA,wBAAA;EACA,aAAA;EACA,mBAAA;AALF;;AAQA;EACE,0BAAA;EACA,eAAA;AALF;;AAQA;EACE,0BAAA;EACA,aAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,mBAAA;AALF;;AAQA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;AALF;;AAQA;EACE,mBAAA;EACA,eAAA;EACA,aAAA;EACA,mBAAA;EACA,kBAAA;EACA,iBAAA;EACA,sBAAA;EACA,uBAAA;EACA,0BAAA;EACA,WAAA;AALF;;AAQA;EACE,cAAA;EACA,mBAAA;AALF;;AAQA;EACE,cAAA;EACA,mBAAA;AALF;;AAQA;EACE,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,SAAA;EACA,cAAA;EACA,4BAAA;EACA,4BAAA;EACA,+BAAA;EACA,6BAAA;EACA,aAAA;EACA,WAAA;AALF;;AAQA;EACE,aAAA;EACA,SAAA;EACA,UAAA;AALF;;AAQA;EACE,aAAA;EACA,8BAAA;EACA,SAAA;AALF;;AAQA;EACE,YAAA;EACA,0BAAA;AALF;;AAQA;EACE,yBAAA;EACA,uBAAA;EACA,uBAAA;EACA,yBAAA;EACA,8BAAA;EACA,qBAAA;EACA,6BAAA;EACA,mBAAA;EACA,kCAAA;EACA,eAAA;EACA,wCAAA;EACA,4BAAA;AALF;;AAQA;EACE,uBAAA;EACA,4BAAA;AALF;;AAQA;EACE,uBAAA;EACA,4BAAA;EACA,wCAAA;EACA,aAAA;EACA,iBAAA;EACA,kBAAA;EACA,WAAA;EACA,aAAA;EACA,QAAA;AALF;;AAQA;EACE,aAAA;EACA,QAAA;EACA,0BAAA;EACA,cAAA;AALF;;AAQA;EACE,sBAAA;AALF;;AAQA;EACE,sBAAA;AALF;;AAQA;EACE,gBAAA;EACA,aAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;AALF;;AAQA;EACE,aAAA;EACA,sBAAA;EACA,SAAA;EACA,2BAAA;EACA,kBAAA;AALF;;AAQA;EACE,gBAAA;EACA,kBAAA;EACA,8BAAA;EACA,4BAAA;EACA,yBAAA;EACA,eAAA;EACA,cAAA;EACA,wBAAA;AALF;;AAQA;EACE,iBAAA;AALF;;AAQA;EACE;IACE,eAAA;IACA,gBAAA;EALF;EAQA;IACE,mBAAA;IACA,aAAA;EANF;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,400&display=swap');\r\n\r\n::-webkit-scrollbar {\r\n  display: none;\r\n}\r\n\r\n/*\r\n===============\r\nVariables\r\n===============\r\n*/\r\n\r\n:root {\r\n  /* dark shades of primary color */\r\n  --clr-primary-1: hsl(205, 86%, 17%);\r\n  --clr-primary-2: hsl(205, 77%, 27%);\r\n  --clr-primary-3: hsl(205, 72%, 37%);\r\n  --clr-primary-4: hsl(205, 63%, 48%);\r\n\r\n  /* primary/main color */\r\n  --clr-primary-5: #49a6e9;\r\n\r\n  /* lighter shades of primary color */\r\n  --clr-primary-6: hsl(205, 89%, 70%);\r\n  --clr-primary-7: hsl(205, 90%, 76%);\r\n  --clr-primary-8: hsl(205, 86%, 81%);\r\n  --clr-primary-9: hsl(205, 90%, 88%);\r\n  --clr-primary-10: hsl(205, 100%, 96%);\r\n\r\n  /* darkest grey - used for headings */\r\n  --clr-grey-1: hsl(209, 61%, 16%);\r\n  --clr-grey-2: hsl(211, 39%, 23%);\r\n  --clr-grey-3: hsl(209, 34%, 30%);\r\n  --clr-grey-4: hsl(209, 28%, 39%);\r\n\r\n  /* grey used for paragraphs */\r\n  --clr-grey-5: hsl(210, 22%, 49%);\r\n  --clr-grey-6: hsl(209, 23%, 60%);\r\n  --clr-grey-7: hsl(211, 27%, 70%);\r\n  --clr-grey-8: hsl(210, 31%, 80%);\r\n  --clr-grey-9: hsl(212, 33%, 89%);\r\n  --clr-grey-10: hsl(210, 36%, 96%);\r\n  --clr-white: #fff;\r\n  --clr-red-dark: hsl(360, 67%, 44%);\r\n  --clr-red-light: hsl(360, 71%, 66%);\r\n  --clr-green-dark: hsl(125, 67%, 44%);\r\n  --clr-green-light: hsl(125, 71%, 66%);\r\n  --clr-black: #222;\r\n  --ff-primary: \"Roboto\", sans-serif;\r\n  --ff-secondary: \"Open Sans\", sans-serif;\r\n  --transition: all 0.3s linear;\r\n  --spacing: 0.25rem;\r\n  --radius: 0.5rem;\r\n  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\r\n  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);\r\n  --max-width: 1170px;\r\n  --fixed-width: 620px;\r\n}\r\n\r\n*,\r\n::after,\r\n::before {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  scroll-behavior: smooth;\r\n}\r\n\r\nbody {\r\n  font-family: var(--ff-secondary);\r\n  background: var(--clr-grey-10);\r\n  color: var(--clr-grey-1);\r\n  display: grid;\r\n  place-items: center;\r\n}\r\n\r\nh2 {\r\n  text-transform: capitalize;\r\n  font-size: 2rem;\r\n}\r\n\r\nheader {\r\n  text-transform: capitalize;\r\n  padding: 1rem;\r\n  font-size: 1.5rem;\r\n  text-align: center;\r\n  display: grid;\r\n  place-items: center;\r\n}\r\n\r\n.alert-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.alert {\r\n  margin-bottom: 1rem;\r\n  height: 1.25rem;\r\n  display: grid;\r\n  align-items: center;\r\n  text-align: center;\r\n  font-size: 0.7rem;\r\n  border-radius: 0.25rem;\r\n  letter-spacing: 0.25rem;\r\n  text-transform: capitalize;\r\n  width: 90vw;\r\n}\r\n\r\n.alert-danger {\r\n  color: #721c24;\r\n  background: #f8d7da;\r\n}\r\n\r\n.alert-success {\r\n  color: #155724;\r\n  background: #d4edda;\r\n}\r\n\r\n.content-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  flex-direction: column;\r\n  gap: 20px;\r\n  margin: 0 auto;\r\n  background: var(--clr-white);\r\n  border-radius: var(--radius);\r\n  box-shadow: var(--light-shadow);\r\n  transition: var(--transition);\r\n  padding: 2rem;\r\n  width: 90vw;\r\n}\r\n\r\n.display-list {\r\n  display: grid;\r\n  gap: 20px;\r\n  width: 80%;\r\n}\r\n\r\n.recent {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  gap: 20px;\r\n}\r\n\r\n.refresh {\r\n  height: 30px;\r\n  transform: translateY(8px);\r\n}\r\n\r\n.btn {\r\n  text-transform: uppercase;\r\n  background: transparent;\r\n  color: var(--clr-black);\r\n  padding: 0.375rem 0.75rem;\r\n  letter-spacing: var(--spacing);\r\n  display: inline-block;\r\n  transition: var(--transition);\r\n  font-size: 0.875rem;\r\n  border: 2px solid var(--clr-black);\r\n  cursor: pointer;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\r\n  border-radius: var(--radius);\r\n}\r\n\r\n.btn:hover {\r\n  color: var(--clr-white);\r\n  background: var(--clr-black);\r\n}\r\n\r\n.board {\r\n  border: 2px solid black;\r\n  border-radius: var(--radius);\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\r\n  padding: 10px;\r\n  max-height: 200px;\r\n  overflow-y: scroll;\r\n  width: 100%;\r\n  display: grid;\r\n  gap: 5px;\r\n}\r\n\r\n.scores {\r\n  display: flex;\r\n  gap: 5px;\r\n  text-transform: capitalize;\r\n  padding: 5px 0;\r\n}\r\n\r\n.scores:nth-child(even) {\r\n  background-color: #ddd;\r\n}\r\n\r\n.scores:nth-child(odd) {\r\n  background-color: #fff;\r\n}\r\n\r\n.form-container {\r\n  margin-top: 2rem;\r\n  display: grid;\r\n  place-items: center;\r\n  gap: 10px;\r\n  width: 100%;\r\n}\r\n\r\nform {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n  color: var(--clr-primary-1);\r\n  text-align: center;\r\n}\r\n\r\ninput {\r\n  padding: 0.25rem;\r\n  padding-left: 1rem;\r\n  background: var(--clr-grey-10);\r\n  border-radius: var(--radius);\r\n  border-color: transparent;\r\n  font-size: 1rem;\r\n  flex: 1 0 auto;\r\n  color: var(--clr-grey-5);\r\n}\r\n\r\n.btn-container {\r\n  text-align: right;\r\n}\r\n\r\n@media only screen and (min-width: 768px) {\r\n  header {\r\n    font-size: 2rem;\r\n    text-align: left;\r\n  }\r\n\r\n  .content-container {\r\n    flex-direction: row;\r\n    height: 24rem;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -927,4 +1007,4 @@ display.refreshBtn.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlec12720ba764d1b008613.js.map
+//# sourceMappingURL=bundle364de502c6e10e9ec12c.js.map

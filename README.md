@@ -176,9 +176,6 @@ npm run build
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Change styling**
-- [ ] **Hit API**
-- [ ] **Post to API**
-- [ ] **Get from API**
 - [ ] **Add dark mood toggle**
 
 
@@ -207,7 +204,7 @@ If you like this project, kindly leave a comment below and share it with someone
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 
 
